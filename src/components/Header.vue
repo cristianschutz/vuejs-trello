@@ -2,7 +2,12 @@
   <header class="header">
     <button
       class="btn"
-      v-on:click="create_frame({ title: 'Novo Frame', order: -999 })"
+      v-on:click="
+        create_frame({
+          title: 'Novo Frame',
+          order: items.length ? items[0].order - 1 : 0,
+        })
+      "
     >
       Adicionar Frame
     </button>
@@ -14,13 +19,16 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 import Menu from "./Menu";
-import { mapActions } from "vuex";
 
 export default {
   name: "Header",
   methods: {
     ...mapActions(["create_frame"]),
+  },
+  computed: {
+    ...mapGetters({ items: "framesByOrder" }),
   },
   components: { Menu },
 };

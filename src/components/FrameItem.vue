@@ -155,6 +155,10 @@ li:hover .frame-item--delete {
 .dragging {
   .frame-item {
     pointer-events: none;
+    input,
+    textarea {
+      pointer-events: none;
+    }
   }
 }
 

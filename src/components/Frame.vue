@@ -86,7 +86,6 @@ export default {
     rewriteOnDrop({ $event, item }) {
       let todos = this.onDrop({ $event, item });
       this.update_todos(todos);
-      this.items = todos;
     },
   },
 };

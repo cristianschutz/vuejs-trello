@@ -25,7 +25,11 @@ export default {
     frames[index].todos.push(obj);
     state.frames = frames;
   },
-  UPDATE_TODO() {},
+  UPDATE_TODO(state, obj) {
+    let frameIndex = state.frames.findIndex((item) => item.id == obj.frame_id);
+    let frame = (state.frames[frameIndex].todos[obj.id] = obj);
+    state.frames[frameIndex] = { ...state.frames[frameIndex], frame };
+  },
   DELETE_TODO(state, obj) {
     let { id } = obj;
     state.frames.map((item) => {

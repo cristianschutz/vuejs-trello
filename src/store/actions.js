@@ -114,13 +114,7 @@ export default {
                 errors = true;
               }
             } else {
-              commit("UPDATE_TODO", {
-                id,
-                title,
-                description,
-                open,
-                order,
-              });
+              commit("UPDATE_TODO", response.data.data);
             }
           });
       });
@@ -138,13 +132,7 @@ export default {
         if (!response.data.return_code) {
           Toast.error("Erro ao atualizar tarefa, tente novamente mais tarde!");
         } else {
-          commit("UPDATE_TODO", {
-            id,
-            title,
-            description,
-            open,
-            order,
-          });
+          commit("UPDATE_TODO", response.data.data);
           Toast.success(`Tarefa ${title ? title : ""} atualizada!`);
         }
       });
