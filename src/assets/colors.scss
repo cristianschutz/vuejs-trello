@@ -1,0 +1,9 @@
+/* template colors -> color vars are set in vuex store and localStorage */
+#app {
+  background-color: rgb(131, 140, 145);
+  background-color: var(--bg);
+}
+.btn {
+  background-color: #5aac44;
+  background-color: var(--btn);
+}
