@@ -121,14 +121,14 @@ export default {
       display: flex;
       justify-content: center;
       margin-bottom: 15px;
-      width: 33.33%;
+      width: 50%;
 
       button {
-        border-radius: 10px;
+        border-radius: 4px;
         display: block;
         font-size: 0;
-        height: 40px;
-        width: 70px;
+        height: 60px;
+        width: 90%;
         position: relative;
         border: 0;
         outline: none;
